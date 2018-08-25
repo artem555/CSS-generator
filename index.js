@@ -41,9 +41,11 @@ function selectProp(e, container) {
 }
 
 function setPropToContainer(styleProp, container, targetElement) {
+    const out = document.querySelector('textarea');
     const prop = targetElement.textContent;
 
     container.style[styleProp] = prop;
+    out.textContent = styleProp + ': ' + prop;
 }
 
 function addNewElement(container) {

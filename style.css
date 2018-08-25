@@ -1,7 +1,7 @@
 .container-present {
     display: flex;
-    width: 552px;
-    height: 552px;
+    width: 520px;
+    height: 520px;
     margin: 0;
     padding: 0;
     background-color: grey;
@@ -30,12 +30,12 @@
 .first {
     position: absolute;
     left: 620px;
-    top: 5px;
+    top: 10px;
 }
 
 .second {
     position: absolute;
-    top: 5px;
+    top: 10px;
     left: 800px;
 }
 
@@ -58,11 +58,22 @@ button:focus {
 
 .buttons {
     position: absolute;
-    top: 377px;
+    top: 370px;
     left: 800px;
 }
 
 .buttons button {
     width: 40px;
     height: 25px;;
+}
+
+textarea {
+    position: absolute;
+    left: 620px;
+    bottom: 87px;
+    width: 250px;
+    height: 30px;
+    border: 1px solid orange;
+    border-radius: 5px;
+    background-color: lightgrey;
 }
