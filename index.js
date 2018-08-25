@@ -4,6 +4,7 @@ function init() {
 
     buttonContainer.addEventListener('click', (e) => selectProp(e, container));
     addNewElement(container);
+    removeElement(container);
 }
 
 function selectProp(e, container) {
@@ -46,20 +47,26 @@ function setPropToContainer(styleProp, container, targetElement) {
 }
 
 function addNewElement(container) {
-    const addli = document.querySelector('button[name = add]');
+    const addNewItemButton = document.querySelector('.add');
     
-    addli.addEventListener('click', () => {
+    addNewItemButton.addEventListener('click', () => {
         const li = document.createElement('li');
         container.appendChild(li);
-        removeElement(li, container);
     });
 }
 
-function removeElement(li, container){
-    const removeli = document.querySelector('button[name = remove]');
+function removeElement(container) {
+    const removeNewItemButton = document.querySelector('.remove');
 
-    removeli.addEventListener('click', () => {
-        container.removeChild(li);
+    removeNewItemButton.addEventListener('click', () => {
+        const children = container.children;
+        const length = children.length;
+
+        if (length <= 0) {
+          return;
+        }
+
+        container.removeChild(children[length - 1]);
     });
 }
 
