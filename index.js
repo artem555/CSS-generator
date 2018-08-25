@@ -14,22 +14,29 @@ function selectProp(e, container) {
     }
     
     const propsContainer = targetElement.parentElement.parentElement;
-    console.log(propsContainer.classList.contains('direction-props'));
 
-    if(propsContainer.classList.contains('direction-props')){
-        setPropToContainer('flex-direction', container, targetElement)
-    } else if(propsContainer.classList.contains('justify-content-props')){
-        setPropToContainer('justify-content', container, targetElement)
-    } else if(propsContainer.classList.contains('wrap-props')){
-        setPropToContainer('flex-wrap', container, targetElement);
-    } else if(propsContainer.classList.contains('display-props')){
-        setPropToContainer('display', container, targetElement);
-    } else if(propsContainer.classList.contains('items-props')){
-        setPropToContainer('align-items', container, targetElement);
-    } else if(propsContainer.classList.contains('content-props')){
-        setPropToContainer('align-content', container, targetElement);
+    switch (true) {
+      case propsContainer.classList.contains('direction-props'):
+        return setPropToContainer('flex-direction', container, targetElement);
+
+      case propsContainer.classList.contains('justify-content-props'):
+        return setPropToContainer('justify-content', container, targetElement);
+
+      case propsContainer.classList.contains('wrap-props'):
+        return setPropToContainer('flex-wrap', container, targetElement);
+
+      case propsContainer.classList.contains('display-props'):
+        return setPropToContainer('display', container, targetElement);
+
+      case propsContainer.classList.contains('items-props'):
+        return setPropToContainer('align-items', container, targetElement);
+
+      case propsContainer.classList.contains('content-props'):
+        return setPropToContainer('align-content', container, targetElement);
+
+      default:
+        return console.error('Seems you tried to set wrong param');
     }
-    //setPropToContainer(container, targetElement);
 }
 
 function setPropToContainer(styleProp, container, targetElement) {
