@@ -1,0 +1,57 @@
+.container-present {
+    display: flex;
+    width: 600px;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+}
+
+.container-present li {
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+    cursor: pointer;
+    background-color: green;
+    border: 2px solid black;
+    list-style-type: none;
+    box-sizing: border-box;
+} 
+
+.button-container ul {
+    margin: 0 0 18px;
+    padding: 0;
+}
+
+.button-container li {
+    list-style-type: none;
+}
+
+.first {
+    position: absolute;
+    left: 620px;
+    top: 5px;
+}
+
+.second {
+    position: absolute;
+    top: 5px;
+    left: 800px;
+}
+
+h2 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+button {
+    margin: 1px;
+    border: 1px solid orange;
+    border-radius: 3px;
+    background-color: lightgrey;
+}
+
+button:focus {
+    border: 2px solid orange;
+}
