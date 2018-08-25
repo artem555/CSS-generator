@@ -1,15 +1,15 @@
 .container-present {
     display: flex;
-    width: 600px;
-    height: 500px;
+    width: 552px;
+    height: 552px;
     margin: 0;
     padding: 0;
     background-color: grey;
 }
 
 .container-present li {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     margin: 1px;
     cursor: pointer;
     background-color: green;
@@ -54,4 +54,15 @@ button {
 
 button:focus {
     border: 2px solid orange;
+}
+
+.buttons {
+    position: absolute;
+    top: 377px;
+    left: 800px;
+}
+
+.buttons button {
+    width: 40px;
+    height: 25px;;
 }

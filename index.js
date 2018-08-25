@@ -3,6 +3,7 @@ function init() {
     const buttonContainer = document.querySelector('.button-container');
 
     buttonContainer.addEventListener('click', (e) => selectProp(e, container));
+    addNewElement(container);
 }
 
 function selectProp(e, container) {
@@ -35,6 +36,24 @@ function setPropToContainer(styleProp, container, targetElement) {
     const prop = targetElement.textContent;
 
     container.style[styleProp] = prop;
+}
+
+function addNewElement(container) {
+    const addli = document.querySelector('button[name = add]');
+    
+    addli.addEventListener('click', () => {
+        const li = document.createElement('li');
+        container.appendChild(li);
+        removeElement(li, container);
+    });
+}
+
+function removeElement(li, container){
+    const removeli = document.querySelector('button[name = remove]');
+
+    removeli.addEventListener('click', () => {
+        container.removeChild(li);
+    });
 }
 
 window.addEventListener('load', init);
