@@ -8,6 +8,7 @@
     <title>NEW SITE</title>
   </head>
   <body>
+    
     <section class='button-container'>
         <ul class='container-present'>    
             <li>Item 1</li>
@@ -15,122 +16,172 @@
             <li>Item 3</li>
             <li>Item 4</li>
         </ul>
-        <div class="first">
-            <ul class="display-props">
-                <li>
-                    <h2>Display</h2>
-                </li>
-                <li>
-                    <button>flex</button>
-                </li>
-                <li>
-                    <button>inline-flex</button>
-                </li>
-            </ul>
-            <ul class='direction-props'>
-                <li>
-                    <h2>Flex-direction</h2>
-                </li>
-                <li>
-                    <button>row</button>
-                </li>
-                <li>
-                    <button>column</button>
-                </li>
-                <li>
-                    <button>row-reverse</button>
-                </li>
-                <li>
-                    <button>column-reverse</button>
-                </li>
-            </ul>
-            <ul class='justify-content-props'>
-                <li>
-                    <h2>Justify-content</h2>
-                </li>
-                <li>
-                    <button>flex-start</button>
-                </li>
-                <li>
-                    <button>flex-end</button>
-                </li>
-                <li>
-                    <button>space-around</button>
-                </li>
-                <li>
-                    <button>space-between</button>
-                </li>
-                <li>
-                    <button>center</button>
-                </li>
-            </ul>
-            <ul class="wrap-props">
-                <li>
-                    <h2>Flex-wrap</h2>
-                </li>
-                <li>
-                    <button>nowrap</button>
-                </li>
-                <li>
-                    <button>wrap</button>
-                </li>
-                <li>
-                    <button>wrap-reverse</button>
-                </li>
-            </ul>  
-        </div> 
-        <div class="second">                              
-            <ul class="items-props">
-                <li>
-                    <h2>Align-items</h2>
-                </li>
-                <li>
-                    <button>flex-start</button>
-                </li>
-                <li>
-                    <button>flex-end</button>
-                </li>
-                <li>
-                    <button>center</button>
-                </li>
-                <li>
-                    <button>baseline</button>
-                </li>
-                <li>
-                    <button>stretch</button>
-                </li>           
-            </ul>
-            <ul class="content-props">
-                <li>
-                    <h2>Align-content</h2>
-                </li>
-                <li>
-                    <button>flex-start</button>
-                </li>
-                <li>
-                    <button>flex-end</button>
-                </li>
-                <li>
-                    <button>center</button>
-                </li>
-                <li>
-                    <button>space-between</button>
-                </li>
-                <li>
-                    <button>space-around</button>
-                </li> 
-                <li>
-                    <button>stretch</button>
-                </li>
-            </ul>
-        </div>
+        <div class="tabs">
+            <input type="radio" name="tab" id="tab1" checked/>
+            <label for="tab1">Container</label>
+            <input type="radio" name="tab" id="tab2"/>
+            <label for="tab2">Items</label>
+            <div class="content">
+                <article class="tab1">
+                    <div class="first">
+                            <ul class="display-props">
+                                <li>
+                                    <h2>Display</h2>
+                                </li>
+                                <li>
+                                    <button>flex</button>
+                                </li>
+                                <li>
+                                    <button>inline-flex</button>
+                                </li>
+                            </ul>
+                            <ul class='direction-props'>
+                                <li>
+                                    <h2>Flex-direction</h2>
+                                </li>
+                                <li>
+                                    <button>row</button>
+                                </li>
+                                <li>
+                                    <button>column</button>
+                                </li>
+                                <li>
+                                    <button>row-reverse</button>
+                                </li>
+                                <li>
+                                    <button>column-reverse</button>
+                                </li>
+                            </ul>
+                            <ul class='justify-content-props'>
+                                <li>
+                                    <h2>Justify-content</h2>
+                                </li>
+                                <li>
+                                    <button>flex-start</button>
+                                </li>
+                                <li>
+                                    <button>flex-end</button>
+                                </li>
+                                <li>
+                                    <button>space-around</button>
+                                </li>
+                                <li>
+                                    <button>space-between</button>
+                                </li>
+                                <li>
+                                    <button>center</button>
+                                </li>
+                            </ul>
+                            <ul class="wrap-props">
+                                <li>
+                                    <h2>Flex-wrap</h2>
+                                </li>
+                                <li>
+                                    <button>nowrap</button>
+                                </li>
+                                <li>
+                                    <button>wrap</button>
+                                </li>
+                                <li>
+                                    <button>wrap-reverse</button>
+                                </li>
+                            </ul>  
+                        </div> 
+                        <div class="second">                              
+                            <ul class="items-props">
+                                <li>
+                                    <h2>Align-items</h2>
+                                </li>
+                                <li>
+                                    <button>flex-start</button>
+                                </li>
+                                <li>
+                                    <button>flex-end</button>
+                                </li>
+                                <li>
+                                    <button>center</button>
+                                </li>
+                                <li>
+                                    <button>baseline</button>
+                                </li>
+                                <li>
+                                    <button>stretch</button>
+                                </li>           
+                            </ul>
+                            <ul class="content-props">
+                                <li>
+                                    <h2>Align-content</h2>
+                                </li>
+                                <li>
+                                    <button>flex-start</button>
+                                </li>
+                                <li>
+                                    <button>flex-end</button>
+                                </li>
+                                <li>
+                                    <button>center</button>
+                                </li>
+                                <li>
+                                    <button>space-between</button>
+                                </li>
+                                <li>
+                                    <button>space-around</button>
+                                </li> 
+                                <li>
+                                    <button>stretch</button>
+                                </li>
+                            </ul>
+                        </div>
+                </article>
+                <article class="tab2">
+                    <ul class="align-self-props">
+                        <li>
+                            <h2>Align-self</h2>
+                        </li>
+                        <li>
+                            <button>flex-start</button>
+                        </li>
+                        <li>
+                            <button>flex-end</button>
+                        </li>
+                        <li>
+                            <button>center</button>
+                        </li>
+                        <li>
+                            <button>baseline</button>
+                        </li>
+                        <li>
+                            <button>stretch</button>
+                        </li>
+                    </ul>
+                    <h2>Flex-grow</h2>
+                    <ul class="flex-grow-props">
+                        <li><button>1</button></li>
+                        <li><button>2</button></li>
+                        <li><button>3</button></li>
+                        <li><button>4</button></li>
+                        <li><button>5</button></li>
+                        <li><button>6</button></li>
+                    </ul>
+                    <h2>Flex-Shrink</h2>
+                    <ul class="flex-shrink-props">
+                        <li><button>1</button></li>
+                        <li><button>2</button></li>
+                        <li><button>3</button></li>
+                        <li><button>4</button></li>
+                        <li><button>5</button></li>
+                        <li><button>6</button></li>
+                    </ul>
+                </article>
+            </div>
+        
     </section>
     <div class="buttons">
         <h2>Flex items</h2>
         <button class="add">+</button>
         <button class="remove">-</button>
     </div>
-    <textarea class="out"></textarea>
+    <p class="out"></p>
     </body>
     <script src="./index.js"></script>
 </html>
