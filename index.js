@@ -17,35 +17,38 @@ function selectProp(e, container) {
     const propsContainer = targetElement.parentElement.parentElement;
 
     switch (true) {
-      case propsContainer.classList.contains('direction-props'):
-        return setPropToContainer('flex-direction', container, targetElement);
+        case propsContainer.classList.contains('direction-props'):
+            return setPropToContainer('flex-direction', container, targetElement);
 
-      case propsContainer.classList.contains('justify-content-props'):
-        return setPropToContainer('justify-content', container, targetElement);
+        case propsContainer.classList.contains('justify-content-props'):
+            return setPropToContainer('justify-content', container, targetElement);
 
-      case propsContainer.classList.contains('wrap-props'):
-        return setPropToContainer('flex-wrap', container, targetElement);
+        case propsContainer.classList.contains('wrap-props'):
+            return setPropToContainer('flex-wrap', container, targetElement);
 
-      case propsContainer.classList.contains('display-props'):
-        return setPropToContainer('display', container, targetElement);
+        case propsContainer.classList.contains('display-props'):
+            return setPropToContainer('display', container, targetElement);
 
-      case propsContainer.classList.contains('items-props'):
-        return setPropToContainer('align-items', container, targetElement);
+        case propsContainer.classList.contains('items-props'):
+            return setPropToContainer('align-items', container, targetElement);
 
-      case propsContainer.classList.contains('content-props'):
-        return setPropToContainer('align-content', container, targetElement);
+        case propsContainer.classList.contains('content-props'):
+            return setPropToContainer('align-content', container, targetElement);
 
-      default:
-        return console.error('Seems you tried to set wrong param');
+        case propsContainer.classList.contains('flex-grow-props'):
+            return setPropToContainer('flex-grow', container, targetElement);
+
+        default:
+            return console.error('Seems you tried to set wrong param');
     }
 }
 
 function setPropToContainer(styleProp, container, targetElement) {
-    const out = document.querySelector('textarea');
+    const out = document.querySelector('.out');
     const prop = targetElement.textContent;
 
     container.style[styleProp] = prop;
-    out.textContent = styleProp + ': ' + prop;
+    out.innerHTML = styleProp + ': ' + prop + ';';
 }
 
 function addNewElement(container) {
@@ -70,6 +73,10 @@ function removeElement(container) {
 
         container.removeChild(children[length - 1]);
     });
+}
+
+function addItemContant() {
+
 }
 
 window.addEventListener('load', init);
