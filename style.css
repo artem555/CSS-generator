@@ -32,7 +32,8 @@ header h2 {
     height: 520px;
     margin: 0;
     padding: 0;
-    background-color: grey;
+    background-color: #A8BAFF;
+    border: 2px solid #512EFF;
 }
 
 .container-present li {
@@ -40,7 +41,7 @@ header h2 {
     height: 90px;
     margin: 1px;
     cursor: pointer;
-    background-color: #94B0FF;
+    background-color: #809DFF;
     border: 2px solid black;
     list-style-type: none;
     box-sizing: border-box;
@@ -136,7 +137,7 @@ p {
 
 .tabs {
     position: relative;
-    top: -520px;
+    top: -531px;
     left: 600px;
 }
 
@@ -149,7 +150,9 @@ article {
 }
 
 .flex-grow-props li,
-.flex-shrink-props li {
+.flex-shrink-props li,
+.flex-basis-props li,
+.order-props li {
     display: inline-block;
 }
 
