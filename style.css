@@ -1,3 +1,31 @@
+body {
+    width: 1250px;
+    margin: 0 auto;
+    background-color: #CFDDFF;
+}
+
+header h1 {
+    margin: 10px 0 0;
+    text-align: center;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 40px;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    color: #897BFF;
+    font-weight: 700;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: uppercase;
+}
+
+header h2 {
+    margin: 0 0 30px;
+    text-align: center;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: #525DFF;
+}
+
 .container-present {
     display: flex;
     width: 520px;
@@ -12,7 +40,7 @@
     height: 90px;
     margin: 1px;
     cursor: pointer;
-    background-color: green;
+    background-color: #94B0FF;
     border: 2px solid black;
     list-style-type: none;
     box-sizing: border-box;
@@ -91,7 +119,7 @@ p {
 }
 
 .tabs input:checked + label {
-    background-color: red;
+    background-color: #859DFF;
     color: white;
 }
 
