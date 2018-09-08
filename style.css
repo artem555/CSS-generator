@@ -40,6 +40,7 @@ header h2 {
     width: 90px;
     height: 90px;
     margin: 1px;
+    padding: 3px;
     cursor: pointer;
     background-color: #809DFF;
     border: 2px solid black;
@@ -111,7 +112,7 @@ p {
     padding: 4px;
     border: solid 1px #464646;
     border-radius: 5px;
-    background-color: lightgrey;
+    background-color: #A8BAFF;
     box-sizing: border-box;
 }
 
@@ -155,4 +156,6 @@ article {
 .order-props li {
     display: inline-block;
 }
+
+
 

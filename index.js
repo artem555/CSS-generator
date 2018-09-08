@@ -5,6 +5,7 @@ function init() {
     buttonContainer.addEventListener('click', (e) => selectProp(e, container));
     addNewElement(container);
     removeElement(container);
+    changeItem();
 }
 
 function selectProp(e, container) {
@@ -35,13 +36,31 @@ function selectProp(e, container) {
         case propsContainer.classList.contains('content-props'):
             return setPropToContainer('align-content', container, targetElement);
 
-        case propsContainer.classList.contains('flex-grow-props'):
-            return setPropToContainer('flex-grow', container, targetElement);
-
         default:
             return console.error('Seems you tried to set wrong param');
     }
 }
+
+/*function changeItem() {
+    const items = document.querySelectorAll('.container-present .item');
+      
+    Array.prototype.map.call(items, callback);
+} 
+
+function callback(item){
+    const propsContainer1 = targetElement.parentElement.parentElement;
+    const targetElement1 = e.target;
+
+    item.addEventListener('click', e => function(e){
+        switch (true) {
+            case propsContainer1.classList.contains('flex-grow-props'):
+                return setPropToContainer('flex-grow', items, targetElement1);
+    
+            case propsContainer1.classList.contains('flex-shrink-props'):
+                return setPropToContainer('flex-shrink', items, targetElement1);
+        }
+    });
+}*/
 
 function setPropToContainer(styleProp, container, targetElement) {
     const out = document.querySelector('.out');
@@ -73,10 +92,6 @@ function removeElement(container) {
 
         container.removeChild(children[length - 1]);
     });
-}
-
-function addItemContant() {
-
 }
 
 window.addEventListener('load', init);
