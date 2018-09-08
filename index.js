@@ -5,7 +5,7 @@ function init() {
     buttonContainer.addEventListener('click', (e) => selectProp(e, container));
     addNewElement(container);
     removeElement(container);
-    changeItem();
+    changeItemProps();
 }
 
 function selectProp(e, container) {
@@ -41,22 +41,22 @@ function selectProp(e, container) {
     }
 }
 
-/*function changeItem() {
+/*function changeItemProps() {
     const items = document.querySelectorAll('.container-present .item');
       
-    Array.prototype.map.call(items, callback);
+    Array.prototype.map.call(items, onItemsProps);
 } 
 
-function callback(item){
-    const propsContainer1 = targetElement.parentElement.parentElement;
-    const targetElement1 = e.target;
+function onItemsProps(item){
+    const propsContainer = targetElement.parentElement.parentElement;
+    const targetElement = e.target;
 
-    item.addEventListener('click', e => function(e){
+    item.addEventListener('click', () => {
         switch (true) {
-            case propsContainer1.classList.contains('flex-grow-props'):
+            case propsContainer.classList.contains('flex-grow-props'):
                 return setPropToContainer('flex-grow', items, targetElement1);
     
-            case propsContainer1.classList.contains('flex-shrink-props'):
+            case propsContainer.classList.contains('flex-shrink-props'):
                 return setPropToContainer('flex-shrink', items, targetElement1);
         }
     });
