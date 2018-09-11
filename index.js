@@ -41,15 +41,16 @@ function selectProp(e, container) {
     }
 }
 
-/*function changeItemProps() {
+function changeItemProps() {
     const items = document.querySelectorAll('.container-present .item');
       
     Array.prototype.map.call(items, onItemsProps);
 } 
 
 function onItemsProps(item){
-    const propsContainer = targetElement.parentElement.parentElement;
     const targetElement = e.target;
+    const propsContainer = targetElement.parentElement.parentElement;
+    
 
     item.addEventListener('click', () => {
         switch (true) {
@@ -60,7 +61,7 @@ function onItemsProps(item){
                 return setPropToContainer('flex-shrink', items, targetElement1);
         }
     });
-}*/
+}
 
 function setPropToContainer(styleProp, container, targetElement) {
     const out = document.querySelector('.out');
