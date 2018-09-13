@@ -35,20 +35,34 @@ function selectProp(e, container) {
         case propsContainer.classList.contains('content-props'):
             return setPropToContainer('align-content', container, targetElement);
 
-        case propsContainer.classList.contains('flex-grow-props'):
-            return setPropToContainer('flex-grow', container, targetElement);
-
         default:
             return console.error('Seems you tried to set wrong param');
     }
 }
 
+function outputContainerStyles(container) {
+    const out = document.querySelector('.output');
+    out.innerHTML = '';
+
+    const fragment = document.createDocumentFragment();
+
+    const keys = Object.keys(container.style);
+
+    const t = keys.map((prop) => {
+        const li = document.createElement('li');
+
+        li.textContent = `${container.style[prop]}: ${container.style[container.style[prop]]};`;
+        fragment.appendChild(li);
+    });
+
+    out.appendChild(fragment);
+}
+
 function setPropToContainer(styleProp, container, targetElement) {
-    const out = document.querySelector('.out');
     const prop = targetElement.textContent;
 
     container.style[styleProp] = prop;
-    out.innerHTML = styleProp + ': ' + prop + ';';
+    outputContainerStyles(container);
 }
 
 function addNewElement(container) {
@@ -68,15 +82,11 @@ function removeElement(container) {
         const length = children.length;
 
         if (length <= 0) {
-          return;
+            return;
         }
 
         container.removeChild(children[length - 1]);
     });
-}
-
-function addItemContant() {
-
 }
 
 window.addEventListener('load', init);
