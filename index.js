@@ -1,16 +1,17 @@
 function init() {
     const container = document.querySelector('.container-present');
     const buttonContainer = document.querySelector('.button-container');
+    const listOfProps = {};
 
-    buttonContainer.addEventListener('click', (e) => selectProp(e, container));
+    buttonContainer.addEventListener('click', (e) => selectProp(e, container, listOfProps));
     addNewElement(container);
     removeElement(container);
 }
 
-function selectProp(e, container) {
+function selectProp(e, container, listOfProps) {
     const targetElement = e.target;
 
-    if(targetElement.tagName !== 'BUTTON'){
+    if(targetElement.tagName !== 'BUTTON') {
         return;
     }
     
@@ -18,51 +19,52 @@ function selectProp(e, container) {
 
     switch (true) {
         case propsContainer.classList.contains('direction-props'):
-            return setPropToContainer('flex-direction', container, targetElement);
+            return setPropToContainer('flex-direction', container, targetElement, listOfProps);
 
         case propsContainer.classList.contains('justify-content-props'):
-            return setPropToContainer('justify-content', container, targetElement);
+            return setPropToContainer('justify-content', container, targetElement, listOfProps);
 
         case propsContainer.classList.contains('wrap-props'):
-            return setPropToContainer('flex-wrap', container, targetElement);
+            return setPropToContainer('flex-wrap', container, targetElement, listOfProps);
 
         case propsContainer.classList.contains('display-props'):
-            return setPropToContainer('display', container, targetElement);
+            return setPropToContainer('display', container, targetElement, listOfProps);
 
         case propsContainer.classList.contains('items-props'):
-            return setPropToContainer('align-items', container, targetElement);
+            return setPropToContainer('align-items', container, targetElement, listOfProps);
 
         case propsContainer.classList.contains('content-props'):
-            return setPropToContainer('align-content', container, targetElement);
+            return setPropToContainer('align-content', container, targetElement, listOfProps);
 
         default:
             return console.error('Seems you tried to set wrong param');
     }
 }
 
-function outputContainerStyles(container) {
+function outputContainerStyles(listOfProps) {
     const out = document.querySelector('.output');
     out.innerHTML = '';
 
     const fragment = document.createDocumentFragment();
+    const keys = Object.keys(listOfProps);
 
-    const keys = Object.keys(container.style);
-
-    const t = keys.map((prop) => {
+    keys.map((propName) => {
         const li = document.createElement('li');
 
-        li.textContent = `${container.style[prop]}: ${container.style[container.style[prop]]};`;
+        li.textContent = `${propName}: ${listOfProps[propName]};`;
         fragment.appendChild(li);
     });
 
     out.appendChild(fragment);
 }
 
-function setPropToContainer(styleProp, container, targetElement) {
+function setPropToContainer(propName, container, targetElement, listOfProps) {
     const prop = targetElement.textContent;
 
-    container.style[styleProp] = prop;
-    outputContainerStyles(container);
+    container.style[propName] = prop;
+    listOfProps[propName] = prop;
+
+    outputContainerStyles(listOfProps);
 }
 
 function addNewElement(container) {
