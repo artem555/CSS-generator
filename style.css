@@ -40,6 +40,7 @@ header h2 {
     width: 90px;
     height: 90px;
     margin: 1px;
+    padding: 4px;
     cursor: pointer;
     background-color: #809DFF;
     border: 2px solid black;
@@ -91,19 +92,12 @@ button:focus {
     border: 3px solid #4c4c4c;
 }
 
-/*.buttons {
-    position: absolute;
-    top: 370px;
-    left: 800px;
-}*/
-
 .buttons button {
     width: 40px;
     height: 25px;
 }
 
-p {
-    
+p { 
     left: 800px;
     bottom: 105px;
     width: 250px;
@@ -156,3 +150,6 @@ article {
     display: inline-block;
 }
 
+.output li {
+    list-style-type: none;
+}

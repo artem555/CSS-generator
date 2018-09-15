@@ -48,7 +48,7 @@ function outputContainerStyles(container) {
 
     const keys = Object.keys(container.style);
 
-    const t = keys.map((prop) => {
+    keys.map((prop) => {
         const li = document.createElement('li');
 
         li.textContent = `${container.style[prop]}: ${container.style[container.style[prop]]};`;
