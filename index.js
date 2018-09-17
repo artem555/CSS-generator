@@ -6,6 +6,7 @@ function init() {
     buttonContainer.addEventListener('click', (e) => selectProp(e, container, listOfProps));
     addNewElement(container);
     removeElement(container);
+    selectItemProp();
 }
 
 function selectProp(e, container, listOfProps) {
@@ -41,14 +42,43 @@ function selectProp(e, container, listOfProps) {
     }
 }
 
+function selectItemProp() {
+    const targetElement = e.target;
+
+    if(targetElement.tagName !== 'BUTTON') {
+        return;
+    }
+    
+    const liCollection = document.querySelectorAll('.container-present .item');
+
+    Array.prototype.forEach.call(liCollection, (li) => {
+
+        switch (true) {
+            case li.classList.contains('flex-grow-props'):
+                return setPropToContainer('flex-grow', liCollection, targetElement, listOfProps);
+
+            case li.classList.contains('flex-shrink-props'):
+                return setPropToContainer('flex-shrink', liCollection, targetElement, listOfProps);
+
+            case li.classList.contains('align-self-props'):
+                return setPropToContainer('align-self', liCollection, targetElement, listOfProps);
+
+            case li.classList.contains('flex-basis-props'):
+                return setPropToContainer('flex-basis', liCollection, targetElement, listOfProps);
+            
+            case li.classList.contains('order-props'):
+                return setPropToContainer('order', liCollection, targetElement, listOfProps);
+        }
+    });
+}
+
 function outputContainerStyles(listOfProps) {
     const out = document.querySelector('.output');
+    const clearButton = document.querySelector('.clearBtn');
     out.innerHTML = '';
 
     const fragment = document.createDocumentFragment();
     const keys = Object.keys(listOfProps);
-
-    const keys = Object.keys(container.style);
 
     keys.map((propName) => {
         const li = document.createElement('li');
@@ -58,6 +88,10 @@ function outputContainerStyles(listOfProps) {
     });
 
     out.appendChild(fragment);
+
+    clearButton.onclick = function() {
+        
+    }
 }
 
 function setPropToContainer(propName, container, targetElement, listOfProps) {
